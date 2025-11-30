@@ -1,15 +1,16 @@
-// Home.jsx
+
 
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import ProductFormModal from './ProductFormModal'; 
 import './Home.css'; 
 
 
 const initialInventory = [
   { id: 1, name: 'Pequeno Príncipe', code: '12345', category: 'Livros', quantity: 20, price: 30, status: 'Em estoque' },
-  { id: 2, name: 'A Arte da Guerra', code: '56788', category: 'Roupas', quantity: 50, price: 70, status: 'Em estoque' },
-  { id: 3, name: 'Uma breve história do tempo', code: '69847', category: 'Calçados', quantity: 15, price: 230, status: 'Estoque Baixo' },
-  { id: 4, name: 'Além do bem e do mal', code: '91011', category: 'Acessórios', quantity: 0, price: 25, status: 'Esgotado' },
+  { id: 2, name: 'A Arte da Guerra', code: '56788', category: 'Livros', quantity: 50, price: 70, status: 'Em estoque' },
+  { id: 3, name: 'Uma breve história do tempo', code: '69847', category: 'Livros', quantity: 15, price: 230, status: 'Estoque Baixo' },
+  { id: 4, name: 'Além do bem e do mal', code: '91011', category: 'Livros', quantity: 0, price: 25, status: 'Esgotado' },
 ];
 
 
@@ -25,15 +26,16 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const [searchTerm, setSearchTerm] = useState('');
   
+  const navigate = useNavigate(); 
   
   const filteredInventory = useMemo(() => {
     if (!searchTerm) return inventory;
     const lowerCaseSearch = searchTerm.toLowerCase();
 
     return inventory.filter(item => 
+      
       item.name.toLowerCase().includes(lowerCaseSearch) ||
-      item.code.includes(lowerCaseSearch) ||
-      item.category.toLowerCase().includes(lowerCaseSearch)
+      item.code.includes(lowerCaseSearch)
     );
   }, [inventory, searchTerm]);
 
@@ -45,14 +47,14 @@ const Home = () => {
       { 
         ...newProduct, 
         id: newId, 
-        
+        category: 'Livros', 
         status: newProduct.quantity > 0 ? 'Em estoque' : 'Esgotado'
       }
     ]);
     setIsModalOpen(false); 
   };
   
-  // Função para Deletar Produto
+  
   const handleDeleteProduct = (id) => {
     setInventory(prev => prev.filter(item => item.id !== id));
   }
@@ -64,13 +66,13 @@ const Home = () => {
       <header className="page-header">
         <h1 className="logo">Stockly</h1>
         <button className="logout-button" title="Sair">
-          &#8594; {/* Seta para a direita */}
+          &#8594; 
         </button>
       </header>
 
       
       <h2 className="inventory-title">
-        {inventory.length} Produtos Cadastrados
+        {inventory.length} Livros Cadastrados
       </h2>
 
       
@@ -78,13 +80,23 @@ const Home = () => {
         <div className="search-and-tabs">
           <input 
             type="text" 
-            placeholder="Digite o nome do produto ou o código" 
+            placeholder="🔍 Digite o nome do livro ou o código" 
             className="search-input-mockup"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <div className="tab-buttons">
-            <button className="tab-button active">Produtos</button>
+            
+            <button className="tab-button active">Inventário (Estoque)</button>
+            
+            
+            <button 
+              className="tab-button"
+              onClick={() => navigate('/products')} 
+            >
+              Catálogo de Produtos
+            </button> 
+            
             <button className="tab-button">Histórico de Movimentações</button>
           </div>
         </div>
@@ -93,7 +105,7 @@ const Home = () => {
           className="main-action-button"
           onClick={() => setIsModalOpen(true)}
         >
-          Cadastrar Produto
+          Cadastrar Livro
         </button>
       </div>
 
@@ -102,8 +114,8 @@ const Home = () => {
         <table>
           <thead>
             <tr>
-              <th className="column-name">Nome</th>
-              <th>Código</th>
+              <th className="column-name">Título do Livro</th> 
+              <th>Código/ISBN</th> 
               <th>Categoria</th>
               <th>Quantidade</th>
               <th>Preço</th>
@@ -124,7 +136,6 @@ const Home = () => {
                 </td>
                 <td className="column-actions">
                   <div className="action-icons">
-                    
                     <button className="icon-button" title="Vender/Saída">🛒</button>
                     <button className="icon-button" title="Adicionar Estoque">➕</button>
                     <button className="icon-button" title="Editar">✏️</button>
@@ -141,14 +152,14 @@ const Home = () => {
             ))}
             {filteredInventory.length === 0 && (
               <tr>
-                <td colSpan="7" className="no-results">Nenhum produto encontrado.</td>
+                <td colSpan="7" className="no-results">Nenhum livro encontrado.</td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
       
-      {/* Modal de Cadastro */}
+      
       {isModalOpen && (
         <ProductFormModal 
           onClose={() => setIsModalOpen(false)}
