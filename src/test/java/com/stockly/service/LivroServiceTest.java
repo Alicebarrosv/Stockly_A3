@@ -60,6 +60,6 @@ class LivroServiceTest {
     void deveLancarExcecaoQuandoLivroNaoEncontradoPorId() {
         when(livroRepository.findById(99L)).thenReturn(Optional.empty());
 
-        assertThrows( () -> livroService.buscarPorId(99L));
+        assertThrows(EntityNotFoundException.class, () -> livroService.buscarPorId(99L));
     }
 }
