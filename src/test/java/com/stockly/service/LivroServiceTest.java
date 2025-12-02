@@ -52,7 +52,7 @@ class LivroServiceTest {
         Livro salvo = livroService.criar(dto);
 
         assertNotNull(salvo.getId());
-        assertEquals("oiTítulo", salvo.getTitulo());
+        assertEquals("Título", salvo.getTitulo());
         assertEquals(autor, salvo.getAutor());
         assertEquals(categoria, salvo.getCategoria());
     }
