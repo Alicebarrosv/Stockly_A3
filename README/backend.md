@@ -34,4 +34,20 @@ Este guia rápido permite criar e popular o banco de dados necessário para a AP
 username: root
 password: Vfca250308!
 database: estoque_db
+```
+---
+
+# Testes
+Os testes foram implementados com JUnit 5 e Mockito, garantindo qualidade e isolamento da lógica de negócio.
+
+# Como os testes foram feitos
+
+Mocks: Repositórios (LivroRepository, AutorRepository, CategoriaRepository) foram simulados para evitar dependência do banco.
+Cenários testados:
+
+Criação de livro com autor e categoria válidos.
+Lançamento de exceção (EntityNotFoundException) quando o livro não é encontrado pelo ID.
+
+
+Validações: Utilizamos assertNotNull, assertEquals e assertThrows para garantir o comportamento esperado.
 
