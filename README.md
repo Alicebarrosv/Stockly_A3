@@ -18,20 +18,16 @@ Tulio Macedo
 
 Victor Ferreira de Castro Alves
 
-# Stockly API - Configuração Rápida do Banco
-
-Este guia rápido permite criar e popular o banco de dados necessário para a API Stockly.
-
 ---
+[Como foi feito a gestão do projeto pelo Jira](README/Jira.md)
 
-## Pré-requisitos
 
-- **MySQL Server** instalado localmente ([Download](https://dev.mysql.com/downloads/mysql/))
-- **Cliente MySQL** como Workbench ([Download](https://dev.mysql.com/downloads/workbench/))
-- MySQL rodando na porta **3306**
-- Credenciais conforme `application.yml`:
+[Como foi feito o Backend](README/backend.md)
 
-```yaml
-username: root
-password: Vfca250308!
-database: estoque_db
+[Como foi feito o Frontend](README/frontend.md)
+
+[Como foi feito os testes TDD](TDD.md)
+
+
+
+
