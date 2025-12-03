@@ -7,10 +7,6 @@ O projeto terá o back-end desenvolvido em Java, garantindo robustez e escalabil
 
 [Projeto no Jira](https://projeto-a3-gerenciamentode-estoque.atlassian.net/jira/software/projects/KAN/boards/1)
 
-
-
-
-
 # Grupo
 Alice Barros Viana
 
@@ -21,3 +17,21 @@ Eduardo Oliveira de Lana
 Tulio Macedo
 
 Victor Ferreira de Castro Alves
+
+# Stockly API - Configuração Rápida do Banco
+
+Este guia rápido permite criar e popular o banco de dados necessário para a API Stockly.
+
+---
+
+## Pré-requisitos
+
+- **MySQL Server** instalado localmente ([Download](https://dev.mysql.com/downloads/mysql/))
+- **Cliente MySQL** como Workbench ([Download](https://dev.mysql.com/downloads/workbench/))
+- MySQL rodando na porta **3306**
+- Credenciais conforme `application.yml`:
+
+```yaml
+username: root
+password: Vfca250308!
+database: estoque_db
