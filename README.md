@@ -9,7 +9,7 @@ Atualmente, desenvolvemos o frontend e o backend da aplicação de forma indepen
 Nosso objetivo é implementar essa integração em uma fase futura do projeto, garantindo que o frontend consuma as APIs do backend de maneira eficiente e segura.
 Enquanto isso, cada componente pode ser executado separadamente para fins de desenvolvimento e testes.
 
-[Projeto no Jira](https://projeto-a3-gerenciamentode-estoque.atlassian.net/jira/software/projects/KAN/boards/1)
+[Projeto no Jira](https://projeto-a3-gerenciamentode-estoque.atlassian.net/jira/software/projects/KAN/boards/1?atlOrigin=eyJpIjoiY2ZhOWM0MzI3ZTA5NDlmNDljZDI3ZWQ5MjIyZGRmMjkiLCJwIjoiaiJ9)
 
 # Grupo
 Alice Barros Viana
