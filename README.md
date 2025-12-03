@@ -5,6 +5,10 @@ baixo e cadastros básicos (como produto, código, valor e quantidade).
 
 O projeto terá o back-end desenvolvido em Java, garantindo robustez e escalabilidade, enquanto o front-end será implementado em React com JavaScript, proporcionando interatividade e uma melhor experiência para o usuário.
 
+Atualmente, desenvolvemos o frontend e o backend da aplicação de forma independente. No momento, a integração entre as duas partes ainda não foi realizada.
+Nosso objetivo é implementar essa integração em uma fase futura do projeto, garantindo que o frontend consuma as APIs do backend de maneira eficiente e segura.
+Enquanto isso, cada componente pode ser executado separadamente para fins de desenvolvimento e testes.
+
 [Projeto no Jira](https://projeto-a3-gerenciamentode-estoque.atlassian.net/jira/software/projects/KAN/boards/1)
 
 # Grupo
