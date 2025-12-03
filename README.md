@@ -26,7 +26,7 @@ Victor Ferreira de Castro Alves
 
 [Como foi feito o Frontend](README/frontend.md)
 
-[Como foi feito os testes TDD](TDD.md)
+[Como foi feito os testes TDD](README/TDD.md)
 
 
 
