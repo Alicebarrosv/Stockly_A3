@@ -8,14 +8,22 @@
   
 # Como foi feito
 
-- Criamos um projeto Spring Boot utilizando o Spring Initializr.
-- Configuramos o Maven para gerenciar dependências e facilitar o build.
-- Implementamos as entidades e repositórios usando Spring Data JPA.
-- Desenvolvemos os endpoints REST para cada operação do CRUD:
-- POST → Criar registro
-- GET → Listar registros
-- PUT → Atualizar registro
-- DELETE → Remover registro
+A Stockly API foi desenvolvida em Java usando Spring Boot.
+O banco de dados utilizado é SQL, com acesso feito por meio do Hibernate.
+
+A API funciona como um CRUD para gerenciamento de estoque de livros, permitindo:
+
+	•	Cadastrar livros
+  
+	•	Listar livros
+  
+	•	Atualizar informações
+  
+	•	Excluir registros
+  
+	•	Controlar entradas e movimentações de estoque
+
+O objetivo é oferecer uma API simples e funcional para organização e controle de estoque.
 
 # Stockly API - Configuração Rápida do Banco
 
@@ -50,4 +58,5 @@ Lançamento de exceção (EntityNotFoundException) quando o livro não é encont
 
 
 Validações: Utilizamos assertNotNull, assertEquals e assertThrows para garantir o comportamento esperado.
+
 
